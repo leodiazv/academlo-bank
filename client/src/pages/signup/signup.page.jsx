@@ -22,6 +22,8 @@ const Signup = () => {
 
 	const submitHandler = e => {
 		e.preventDefault();
+		dispatch(signup(nameInputRef.current.value,passwordInputRef.current.value))
+		
 		navigate('/login');
 	};
 

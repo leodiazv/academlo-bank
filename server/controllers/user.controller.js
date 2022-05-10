@@ -17,21 +17,21 @@ const createUser = catchAsync(async (req, res, next) => {
 });
 
 const userlogin = catchAsync(async (req, res, next) => {
-  const { name, password } = req.body;
+  const { accountNumber, password } = req.body;
 
   const user = await User.findOne({
     where: {
-      name: name,
+      accountNumber,
     },
   });
 
   if (!user) {
     res.status(400).json({
-      msg: 'User name not found',
+      msg: 'Account number not found',
     });
   } else if (user.password === password) {
     res.status(200).json({
-      msg: 'Logeado',
+      user,
     });
   } else {
     res.status(400).json({

@@ -22,7 +22,7 @@ const Login = () => {
 
 	const submitHandler = e => {
 		e.preventDefault();
-
+		dispatch(login(accountInputRef.current.value,passwordInputRef.current.value))
 		navigate('/');
 	};
 

@@ -28,7 +28,7 @@ const {
 router.route('/').get(getAllUsers);
 
 router
-  .route('/singup')
+  .route('/signup')
   .post(createUserValidations, checkCreateUserValidation, createUser);
 router.route('/login').post(userlogin);
 
